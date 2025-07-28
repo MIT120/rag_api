@@ -16,6 +16,39 @@ The API will evolve over time to employ different querying/re-ranking methods, e
 
 ## Setup
 
+### Quick Local Development
+
+For the fastest way to get started with local development:
+
+1. **Clone the repository and navigate to the project directory**
+
+2. **Set up your environment variables:**
+   ```bash
+   # Copy the example .env file (already configured with defaults)
+   # Edit .env and add your OpenAI API key
+   ```
+
+3. **Run the local development script:**
+   ```bash
+   ./run-local.sh
+   ```
+
+This script will:
+- Build and start the PostgreSQL database with pgvector
+- Build and start the FastAPI application
+- Wait for services to be ready
+- Provide you with useful URLs and commands
+
+**Access your local RAG API:**
+- API: http://localhost:8000
+- API Documentation: http://localhost:8000/docs
+- Database: localhost:5433
+
+**Development with hot reload:**
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.dev.yml up --build
+```
+
 ### Getting Started
 
 - **Configure `.env` file based on [section below](#environment-variables)**

@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python main.py
+    volumes:
+      - .:/app
+      - ./uploads:/app/uploads
+    environment:
+      - DEBUG_RAG_API=true
+      - RAG_HOST=0.0.0.0
+      - RAG_PORT=8000
+    ports:
+      - "8000:8000"
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: /app/app
+        - action: sync
+          path: ./main.py
+          target: /app/main.py
+        - action: rebuild
+          path: requirements.txt
+
+  db:
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
