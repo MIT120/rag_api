@@ -8,14 +8,14 @@
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 6.5_
 
 - [ ] 2. Create comprehensive build and deployment scripts
-  - [ ] 2.1 Enhance docker-build.sh script with advanced features
+  - [x] 2.1 Enhance docker-build.sh script with advanced features
     - Add multi-architecture build support (AMD64/ARM64)
     - Implement build argument handling for different environments
     - Add build validation and error handling
     - Include image size optimization and layer analysis
     - _Requirements: 5.1, 5.2, 5.3_
 
-  - [ ] 2.2 Improve docker-push.sh script with registry management
+  - [x] 2.2 Improve docker-push.sh script with registry management
     - Add authentication handling for different registry types
     - Implement proper image tagging with version information
     - Add push retry logic and error handling
